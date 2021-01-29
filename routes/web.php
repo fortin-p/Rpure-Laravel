@@ -1,24 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
-Route::get('/', function () {
-    return 'home page';
-    //return view('pages/homepage');
 
-});
+Route::get('/',[HomeController::class,'index']);
 
-Route::get('/product', function () {
-    return 'liste des produits';
-   // return view('pages/listProduct');
-});
+Route::get('/product',[ProductController::class,'listProduct']);
+Route::get('/product/{id}',[ProductController::class,'product']);
 
-Route::get('/product/{id}', function ($id) {
-    return 'Fiche du produit :' .$id;
-    //return view('pages/detailsproduct');
-});
+Route::get('/cart',[CartController::class,'cart']);
 
-Route::get('/cart', function () {
-    return 'Panier';
-   // return view('pages/basket');
-});
+
