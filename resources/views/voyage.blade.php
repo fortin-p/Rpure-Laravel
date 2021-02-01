@@ -1,13 +1,22 @@
+
+
+
 @extends('display_voyage')
-@section('title')
-    Rpure - Voyage
-@endsection
+
+
+
 @section('titre')
     Voyage, voyage
 @endsection
 
 
+@section('bottle')
+    @include('Layout.Bouteille')
+@endsection
 
-@section('Voyage')
+
+
+@section('footer')
+    @include('footer')
 @endsection
 

@@ -18,7 +18,7 @@
 <div id="trait_dessus"><hr></div>
 <div class="container">
     <div class="descpCanada">
-        @yield('Voyage')
+
         <img src="{{ asset('images/canada.jpg') }}" alt="Voyage banner" class="photo">
         <h1 class ='r-titre'>R-Canada</h1>
         <h2 id="price">2400 €</h2>
@@ -42,14 +42,14 @@
                 type="button">
             Details
         </button>
-        <img src="{{ asset('images/Panier.png') }}" alt="panier" class="panier">
+        <a href=""> <img src="{{ asset('images/Panier.png') }}" alt="panier" class="panier"></a>
 
     </div>
 </div>
 
 <div class="containerAlpes">
     <div class="descpAlpes">
-        @yield('Voyage')
+
         <img src="{{ asset('images/Alpes.jpg') }}" alt="Voyage banner" class="photo">
         <h1 class ='r-titre'>R-Alpes</h1>
         <h2 id="price">4800 €</h2>
@@ -59,10 +59,14 @@
                 type="button">
             Details
         </button>
-        <img src="{{ asset('images/Panier.png') }}" alt="panier" class="panier">
+        <a href="">   <img src="{{ asset('images/Panier.png') }}" alt="panier" class="panier"></a>
 
     </div>
 </div>
+@yield('bottle')
+<footer>
+    @yield('footer')
 
+</footer>
 </body>
 </html>
