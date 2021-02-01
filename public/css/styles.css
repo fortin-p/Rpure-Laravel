@@ -1,1 +1,108 @@
+body{
+    background-color: #3D5160;
+}
 
+.hero{
+    margin-top: 15px;
+    height: 375px;
+    width: 100%;
+}
+
+.voyage_voyage{
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+#trait_dessus
+{
+    margin-left: auto;
+    margin-right: auto;
+    width : 700px;
+    background-color: #30C9D1;
+}
+
+.container{
+    margin-top: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #2C3E4A;
+
+}
+.containerCaraibes{
+
+
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerAlpes{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #2C3E4A;
+
+}
+
+
+.photo{
+    height: auto;
+    width: 900px;
+    margin-top: 100px;
+    border:1px solid #30C9D1;
+}
+
+.r-titre{
+    font-family: 'Montserrat', sans-serif;
+    color: #30C9D1;
+
+}
+
+#price{
+    display: inline-block;
+    float: right;
+    color: white;
+
+
+}
+
+.description{
+    color: white;
+}
+.detailsbutton{
+
+    border-radius: 10px;
+    width: 122px;
+    height: 30px;
+    left: 1310px;
+    top: 3192px;
+    background-color: #30C9D1;
+    color: white;
+
+}
+.detailsbutton:hover{
+    background-color: white;
+    border:1px solid #30C9D1;
+    color:  #30C9D1;
+
+}
+.panier{
+
+    float: top;
+    float: right;
+    margin-bottom: 15px;
+}
+.panier:hover{
+color: white;
+
+}
+
+
+p{
+    font-family: 'Titillium Web', sans-serif;
+
+}
