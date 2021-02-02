@@ -41,8 +41,5 @@
     </div>
 
     @include('Layout.Bouteille')
-    <footer>
-        @include('footer')
 
-    </footer>
 @endsection
