@@ -1,3 +1,6 @@
+@section('title')
+    R-Pure
+@endsection
 @section('titre')
     Voyage, voyage
 @endsection
