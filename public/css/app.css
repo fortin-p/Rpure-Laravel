@@ -1,0 +1,45 @@
+#navbar
+{
+    display: grid;
+    grid-row-end: auto;
+}
+    #search-bar, #user, #nav-title, #logo
+    {
+        grid-row: 1;
+    }
+    #nav-title
+    {
+        grid-row-end: auto;
+    }
+    #nav-items
+    {
+        display: grid;
+        grid-template-rows: auto;
+    }
+        #nav-one, #nav-two, #nav-three, #nav-four, #nav-five
+        {
+            grid-row: 1;
+        }
+    #search-bar
+    {
+        //background-color: red;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        padding-left: 10rem;
+    }
+        #search-line
+        {
+            grid-column: 1/5;
+            //background-color: blue;
+        }
+        #loupe
+        {
+            background-color: grey;
+            height: 50px;
+            width: 50px;
+        }
+
+    #profile
+    {
+        display: flex;
+    }

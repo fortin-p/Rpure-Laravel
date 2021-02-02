@@ -15,3 +15,6 @@ Route::get('/product/{id}',[ProductController::class,'product']);
 Route::get('/cart',[CartController::class,'cart']);
 
 Route::get('/voyage',[VoyageController::class,'voyage']);
+
+Route::get('/nav',[VoyageController::class,'navbar']);
+
