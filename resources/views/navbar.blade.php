@@ -5,26 +5,31 @@
     <div id="nav-title">
         <ul id="nav-items">
             <li id="nav-one">
-                <a class="" href="/">Accueil</a>
+                <a class="" href="/">Accueil</a>*
+                <hr class="hr-hover">
             </li>
             <li id="nav-two">
                 <a class="" href="#">Voyages</a>
+                <hr class="hr-hover">
             </li>
             <li id="nav-three">
                 <a class="" href="/products">Boutique</a>
+                <hr class="hr-hover">
             </li>
             <li id="nav-four">
                 <a class="" href="#" >Contact</a>
+                <hr class="hr-hover">
             </li>
             <li id="nav-five">
                 <a class="" href="/cart">Panier</a>
+                <hr class="hr-hover">
             </li>
         </ul>
     </div>
     <div id="search-bar">
         <div id="search-line">
             <input type="text">
-            <hr>
+            <hr id="search-hr">
         </div>
         <div id="loupe">
             <a id="loupe-icone">
