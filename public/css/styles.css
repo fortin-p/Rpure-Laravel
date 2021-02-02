@@ -105,25 +105,98 @@ p{
     font-family: 'Titillium Web', sans-serif;
 
 }
+/*BASKET*/
+.containerbasket{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    border: solid #30C9D1;
+
+}
+.childBasket{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+.photoBasket{
+    height: 300px;
+    width: 400px;
+    border:1px solid #30C9D1;
+
+}
+
+
 /*FOOTER*/
+#titreBouteille{
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.containerBottle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#pbottle{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+
+
+}
 
 .containerfooter{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 200px;
     top: 100%;
     width:100%;
 
 }
-
 .follow{
+    color: white;
+}
+.contact{
 
+    display: flex;
+    flex-flow: column;
+    color: white;
+}
+.contactpng{
+    height: 30px;
+    width: 30px;
 
 }
+.cont{
+    color: white;
+}
 
+.mentions{
+    margin-top: 120px;
+    justify-content: space-evenly;
+    display: flex;
+    color: white;
+}
+.vertical-line{
+    border-left: 2px solid white;
+    display: inline-block;
+    height: 100px;
+    margin: 0 20px;
+
+}
 .sponsor{
     margin-left: 5px;
-    height: 50px;
+    height: 60px;
+    width: 80px;
 
 }
