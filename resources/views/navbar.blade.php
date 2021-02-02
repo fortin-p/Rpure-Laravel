@@ -5,8 +5,9 @@
     <div id="nav-title">
         <ul id="nav-items">
             <li id="nav-one">
-                <a class="" href="/">Accueil</a>*
+                <a class="" href="/">Accueil</a>
                 <hr class="hr-hover">
+
             </li>
             <li id="nav-two">
                 <a class="" href="#">Voyages</a>

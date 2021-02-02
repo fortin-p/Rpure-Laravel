@@ -237,11 +237,21 @@ a{
     color: white;
     text-decoration: none;
 }
+#nav-items hr
+{
+    visibility: hidden;
+    margin-right: 10px;
+}
 #nav-one, #nav-two, #nav-three, #nav-four, #nav-five
 {
     grid-row: 1;
     margin-left:50px;
     font-size: 1.5rem;
+}
+#nav-one:hover .hr-hover, #nav-two:hover .hr-hover, #nav-three:hover .hr-hover, #nav-four:hover .hr-hover, #nav-five:hover .hr-hover
+{
+    color: white;
+    visibility: visible;
 }
 #search-bar
 {

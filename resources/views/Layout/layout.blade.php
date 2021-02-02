@@ -13,6 +13,7 @@
     <link  rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     <title>@yield('title')</title>
 </head>
+@include('navbar')
 <body>
 @yield('content')
 
