@@ -1,15 +1,9 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="Page d'accueil du site R-pure" content="ce site vous propose des voyages pour changer d'air">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel='stylesheet' href="CSSHomePage.css">
+
+
         @extends('layout.layout');
-        @include('navbar');
+        @section('content');
+
         <title>Page d'Accueil R-pure</title>
-    </head>
-    <body>
 
         <div class="bodyHomePage">
             <div class="image_lac_montagne ">
@@ -27,16 +21,7 @@
                 </div>
             </div>
 
-             <div class="inclus_voyage">Inclus dans nos voyages :</div>
-
-        <div class="container_bouteille ">
-
-            <img src={{ asset("images\Bouteille.png")}} alt="Photo d'une bouteille d'R-pure">
-
-            <div class="texte_bouteille">
-                <p>Dans chacune de nos  expéditions, il est possible de repartir avec un  souvenir.
-                    <h5> Ramenez l’air pur à la maison <h5><br />
-
+            @include('layout.bouteille');
                     <button type="button" class="button">Boutique</button>
                 </p>
             </div>
@@ -67,7 +52,4 @@
 
             </div>
 
-
-
-    </body>
-    </html>
+            @endsection
