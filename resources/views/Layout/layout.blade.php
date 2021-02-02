@@ -16,7 +16,5 @@
 @include('navbar')
 <body>
 @yield('content')
-
-
 </body>
 </html>
