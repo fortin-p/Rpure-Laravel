@@ -1,13 +1,7 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="Page d'accueil du site R-pure" content="ce site vous propose des voyages pour changer d'air">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel='stylesheet' href="CSSHomePage.css">
+
+@extends('layout.layout');
         <title>Page d'Accueil R-pure</title>
-    </head>
-    <body>
+
 
         <div class="bodyHomePage">
             <div class="image_lac_montagne ">
@@ -65,7 +59,3 @@
 
             </div>
 
-
-
-    </body>
-    </html>
