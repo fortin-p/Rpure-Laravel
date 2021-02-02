@@ -16,5 +16,7 @@
 @include('navbar')
 <body>
 @yield('content')
+
+@include('footer')
 </body>
 </html>

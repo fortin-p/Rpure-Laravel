@@ -1,17 +1,5 @@
-*{
-    background-color: #3D5160;
-    margin:1rem;
-    padding:1rem;
 
 
-}
-
-.image_lac_montagne{
-    margin-top: 15px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 #bodyHomePage {
     width: 100%;
@@ -19,7 +7,17 @@
 
 }
 
+.bodyHomePage h1{
 
+/* Montserrat light 45 Slogan */
+
+font-family: Montserrat;
+font-style:italic;
+text-align: center;
+justify-content: center;
+color: #E0EAFF;
+
+}
 
 .RCanada{
 
@@ -44,31 +42,31 @@
     text-align: center;
     color: #E0EAFF;
   }
+  .container_bouteille{
+    background-color: #4A6574;
+    justify-content: left;
+      display: flex;
 
-.container_FAQ{
+  }
+
+  .texte_bouteille{
+    background-color: #4A6574;
     display: flex;
-    font-family: Titillium Web;
-    font-size: 20px;
+    justify-content: center;
+
+
+
+
+    font-family: Montserrat;
+    font-size: 50px;
     font-style: normal;
-    font-weight: 200;
-    line-height: 20px;
-    letter-spacing: 0em;
+
     text-align: left;
     color: #E0EAFF;
     background-color: #4A6574;
+  }
 
-}
-
-.container_FAQ h3{
-    font-family: Montserrat;
-font-size: 25px;
-font-style: normal;
-font-weight: 300;
-line-height: 22px;
-letter-spacing: 0em;
-text-align: left;
-
-}
-
-
+  .container_bouteille h5{
+      color: aqua;
+  }
 
