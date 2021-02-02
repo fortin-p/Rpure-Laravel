@@ -1,6 +1,5 @@
 @extends("Layout.layout")
 @section('content')
-    @include("navbar")
 <img src="{{ asset('images/baniere_voyage.jpeg') }}" alt="Voyage banner" class="hero">
 <h1 class ='voyage_voyage'>@yield("titre")</h1>
 <div id="trait_dessus"><hr></div>
