@@ -200,3 +200,83 @@ p{
     width: 80px;
 
 }
+
+/******************************************************************************************************************************/
+/*NAVBAR*/
+/******************************************************************************************************************************/
+
+#navbar
+{
+    display: grid;
+    background-color: #2C3E4A;
+    grid-row-end: auto;
+    margin-top: -20px;
+    margin-left: -10px;
+    margin-right: -20px;
+    height: 100px;
+}
+#search-bar, #user, #nav-title, #logo
+{
+    grid-row: 1;
+}
+
+#nav-title
+{
+    margin-top: 20px;
+    grid-row-end: auto;
+    margin-left: 50px;
+}
+#nav-items
+{
+    display: grid;
+    grid-template-rows: auto;
+    font-family: 'Montserrat', sans-serif;
+    list-style-type: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+#nav-one, #nav-two, #nav-three, #nav-four, #nav-five
+{
+    grid-row: 1;
+    margin-left:50px;
+    font-size: 1.5rem;
+}
+#search-bar
+{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 10rem;
+    margin-top: 30px;
+}
+#search-line
+{
+    grid-column: 1/5;
+}
+input
+{
+    background-color: #2C3E4A;
+    color: white;
+    font-size: 1.2rem;
+    border: 0;
+}
+#search-hr
+{
+    color: white;
+}
+#loupe
+{
+    height: 50px;
+    width: 50px;
+}
+
+#profile
+{
+    display: flex;
+    margin-top: 20px;
+}
+
+/******************************************************************************************************************************/
+/*FIN NAVBAR*/
+/******************************************************************************************************************************/
