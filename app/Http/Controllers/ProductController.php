@@ -17,4 +17,6 @@ ProductController extends Controller
     {
         return view('product-list',['id' => $id]);
     }
+
+
 }

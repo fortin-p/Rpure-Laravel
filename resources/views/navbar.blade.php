@@ -10,11 +10,11 @@
 
             </li>
             <li id="nav-two">
-                <a class="" href="#">Voyages</a>
+                <a class="" href="/voyage">Voyages</a>
                 <hr class="hr-hover">
             </li>
             <li id="nav-three">
-                <a class="" href="/products">Boutique</a>
+                <a class="" href="/boutique">Boutique</a>
                 <hr class="hr-hover">
             </li>
             <li id="nav-four">

@@ -4,6 +4,7 @@
 @section('titre')
     Voyage, voyage
 @endsection
+
 @section('photoCanada')
     <img src="{{ asset('images/canada.jpg') }}" alt="Voyage banner" class="photo">
 @endsection

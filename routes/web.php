@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
+use App\Http\Controllers\BoutiqueController;
+
 
 
 Route::get('/',[HomeController::class,'index']);
@@ -16,4 +18,10 @@ Route::get('/cart',[CartController::class,'cart']);
 
 Route::get('/voyage',[VoyageController::class,'voyage']);
 Route::get('/voyage/{id}',[VoyageController::class,'specVoyage']);
+
+Route::get('/boutique',[BoutiqueController::class,'boutique']);
+Route::get('/boutique/{id}',[BoutiqueController::class,'specarticle']);
+
+Route::get('/boutiqueprice',[BoutiqueController::class,'boutiqueprice']);
+Route::get('/boutiquename',[BoutiqueController::class,'boutiquename']);
 

@@ -1,6 +1,6 @@
 
 
-        @extends('layout.layout');
+        @extends('Layout.layout');
         @section('title')
         <title>Page d'Accueil R-pure</title>
         @endsection
@@ -22,11 +22,11 @@
                 </div>
             </div>
 
-            @include('layout.bouteille');
+            @include('Layout.Bouteille');
                     <button type="button" class="button">Boutique</button>
                 </p>
             </div>
         </div>
 
-            @include('layout.FAQ')
+            @include('Layout.FAQ')
     @endsection

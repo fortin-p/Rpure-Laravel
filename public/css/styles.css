@@ -425,12 +425,11 @@ h1
 {
     padding-left: 5rem;
 }
-#affichage
-{
-    //position: relative;
+#affichage {
+/ / position: relative;
     color: white;
     font-family: 'Titillium Web', sans-serif;
-
+}
 /******************************************************************************************************************************/
 /*Class Button*/
 /******************************************************************************************************************************/
@@ -527,6 +526,42 @@ text-align: left;
 /******************************************************************************************************************************/
 
 .image_lac_montagne{
-    width :"400";
-    height : "341";
+    width :400px;
+    height : 341px;
+}
+/******************************************************************************************************************************/
+/* Boutique */
+/******************************************************************************************************************************/
+
+#grid-body
+{
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+    grid-gap: 10px;
+    margin-top: 5rem;
+    margin-left: 20rem;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.body-card
+{
+    width: 80%;
+    background-color: #4A6574;
+}
+.body-card h2
+{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+.card-txt
+{
+    text-align: center;
+}
+#title-page
+{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
 }
