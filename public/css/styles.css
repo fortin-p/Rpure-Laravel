@@ -288,5 +288,146 @@ input
 }
 
 /******************************************************************************************************************************/
-/*FIN NAVBAR*/
+/*Specifique voyage*/
 /******************************************************************************************************************************/
+h1
+
+{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 5rem;
+    text-align: center;
+}
+#header
+{
+    margin-left: 15rem;
+    display: grid;
+}
+#header h1
+{
+    grid-column: 1/3;
+}
+#top-img
+{
+
+    grid-column: 1/4;
+}
+#right-bloc
+{
+    position: fixed;
+    right: 10rem;
+    top: 18rem;
+}
+
+#infos-voyage
+{
+    width: 27rem;
+    height: 22rem;
+    background-color: #4A6574;
+    color: white;
+    padding: 30px;
+}
+#infos-voyage h2
+{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+#infos-voyage p
+{
+    font-family: 'Titillium Web', sans-serif;
+}
+#infos-voyage a
+{
+    margin-left: 15rem;
+}
+#stars
+{
+    margin-top: 5px;
+}
+#central-text
+{
+    margin-left: 17rem;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    width: 45%;
+}
+#travel-adds
+{
+    width: 58rem;
+    height: 20rem;
+    background-color: #4A6574;
+    margin-left: 15rem;
+    position: relative;
+    color:white;
+}
+#bottles
+{
+    position: absolute;
+    margin-left: -35px;
+}
+#b2, #b3
+{
+    margin-left: -200px;
+}
+#bottles img
+{
+    width: 300px;
+}
+#text-bottle
+{
+    position: absolute;
+    width: 29rem;
+    margin-left: 26rem;
+    margin-top: 2rem;
+}
+#text-bottle a
+{
+    margin-left: 20rem;
+}
+.title-2
+{
+    margin-top: 5rem;
+    margin-left: 16rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+.alpiniste
+{
+    display: grid;
+    width: 58rem;
+    background-color: #4A6574;
+    margin-left: 15rem;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
+#img-resize
+{
+    grid-row: 1;
+    border-radius: 50%;
+    margin-left: 2rem;
+    width: 15rem;
+    height: 15rem;
+    background-image: url("../images/gile.jpeg");
+    background-position: 55% 10%;
+    margin-top: 1.2rem;
+}
+
+.alpiniste p
+{
+    grid-row: 1;
+    padding: 50px;
+}
+
+#subscribe td
+{
+    padding-left: 5rem;
+}
+#affichage
+{
+    //position: relative;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
