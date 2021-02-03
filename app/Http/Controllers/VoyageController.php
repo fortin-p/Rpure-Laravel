@@ -7,21 +7,20 @@ use Illuminate\Support\Facades\DB;
 
 class VoyageController extends Controller
 {
-    public function voyage() {
+    public function voyage()
+    {
 
         $products = DB::select('select * from products');
-           return view ('voyage')
-               ->with('products', $products);
-        }
+        return view('voyage')
+            ->with('products', $products);
+    }
 
+    public function store($id)
+    {
 
-
-
-
-
-//    public function voyage()
-//    {
-//        return view ('voyage');
-//    }
+        $article = DB::select("SELECT * from products where id=".$id);
+        return view('product-list')
+            ->with('products', $article);
+    }
 }
 
