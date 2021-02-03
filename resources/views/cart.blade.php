@@ -6,7 +6,7 @@
     Votre Panier d’air
 @endsection
 
-
+@section('content')
 <h1 class ='voyage_voyage'>@yield("titre")</h1>
 
 <div class="containerbasket">
@@ -37,4 +37,4 @@
         </ul>
     </div>
 </div>
-
+@endsection
