@@ -10,7 +10,7 @@ class BoutiqueController extends Controller
 {
     public function boutique()
     {
-        $articles=Product::all()->sortBy('name')        ;
+        $articles=Product::orderBy('name', 'asc')->get();
         return view('boutique')->with('articles', $articles);
     }
     public function specarticle($id)
@@ -20,12 +20,12 @@ class BoutiqueController extends Controller
     }
     public function boutiqueprice()
     {
-        $articles=Product::all()->sortBy('price')        ;
+        $articles=Product::orderBy('price', 'asc')->get();
         return view('boutique')->with('articles', $articles);
     }
     public function boutiquename()
     {
-        $articles=Product::all('name', 'price')->sortBy('name')        ;
+        $articles=Product::all('name', 'price');
         return view('boutique')->with('articles', $articles);
     }
 }
