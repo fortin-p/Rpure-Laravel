@@ -18,7 +18,6 @@
                     @yield("iconePanier")
                 </div>
             </div>
-
     @endforeach
     {{--    </div>--}}
     {{--    <div class="containerCaraibes">--}}
