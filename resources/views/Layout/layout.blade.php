@@ -15,5 +15,13 @@
 @include('navbar')
 <body>
 @yield('content')
+<<<<<<< HEAD
+=======
+
+<footer>
+    @include('footer')
+
+</footer>
+>>>>>>> main
 </body>
 </html>

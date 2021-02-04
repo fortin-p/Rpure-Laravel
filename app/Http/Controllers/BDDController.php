@@ -18,7 +18,7 @@ class BDDController extends Controller
 
     public function store($id)
     {
-        $article = DB::select("SELECT * from products where id=" [$id]);
-        return view('product-list',['products'=>$id]);
+        $article = DB::select("SELECT * from products where id=" .$id);
+        return view('product-list',['products'=>$article]);
     }
 }

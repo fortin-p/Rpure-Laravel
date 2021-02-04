@@ -1,0 +1,72 @@
+
+
+
+#bodyHomePage {
+    width: 100%;
+    margin:auto;
+
+}
+
+.bodyHomePage h1{
+
+/* Montserrat light 45 Slogan */
+
+font-family: Montserrat;
+font-style:italic;
+text-align: center;
+justify-content: center;
+color: #E0EAFF;
+
+}
+
+.RCanada{
+
+    position: absolute;
+    width: 150px;
+    height: 701px;
+    top: 1419px;
+  }
+
+  .RAlps{
+      display: flex;
+      width: 150px;
+      margin-left: 1000px;
+
+  }
+
+
+  .inclus_voyage{
+    justify-content: center;
+    font-family: Montserrat;
+    font-size: 64px;
+    text-align: center;
+    color: #E0EAFF;
+  }
+  .container_bouteille{
+    background-color: #4A6574;
+    justify-content: left;
+      display: flex;
+
+  }
+
+  .texte_bouteille{
+    background-color: #4A6574;
+    display: flex;
+    justify-content: center;
+
+
+
+
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+
+    text-align: left;
+    color: #E0EAFF;
+    background-color: #4A6574;
+  }
+
+  .container_bouteille h5{
+      color: aqua;
+  }
+
