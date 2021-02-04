@@ -28,3 +28,4 @@ route::get('/backoffice/create',[backofficecontroller::class,'create']);
 route::post('/backoffice/create',[backofficecontroller::class,'store']);
 
 route::get('/backoffice/{id}/edit',[backofficecontroller::class,'edit']);
+route::post('/backoffice/{id}/edit', [backofficecontroller::class,'update']);

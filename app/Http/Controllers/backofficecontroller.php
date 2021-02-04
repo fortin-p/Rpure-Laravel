@@ -48,7 +48,7 @@ class backofficecontroller extends Controller
                 'price' => $request->input('price'),
                 'weight' => $request->input('weight'),
                 'image' => $request->input('image'),
-                'id' => $request->input('id'),
+                'categorie_id' => $request->input('categorie_id'),
                 'quantity' => $request->input('quantity'),
 
             ],
@@ -90,8 +90,19 @@ class backofficecontroller extends Controller
      */
     public function update(Request $request, $id)
     {
+        $products = Product::find($id);
 
+        $products->name = $request->input('name');
+        $products->description = $request->input('description');
+        $products->price = $request->input('price');
+        $products->weight = $request->input('weight');
+        $products->image = $request->input('image');
+        $products->categorie_id = $request->input('categorie_id');
+        $products->quantity =$request->input('quantity');
+
+        return view('backoffice_update',['products' => $products]);
     }
+
 
     /**
      * Remove the specified resource from storage.

@@ -1,7 +1,8 @@
 @section('content')
 
     <div class="container text-white">
-        <form action="/backoffice/create" method="POST" class="form-example">
+        <form action="/backoffice/" method="POST" class="form-example">
+            {{ csrf_field() }}
             <div class="form-group">
                 <label for="create">Nom de l'article</label>
                 <input required="required" type="text" class="form-control" name="name" placeholder="Nom de l'article">
@@ -36,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label for="create">Numéro d'id de la catégorie</label>
-                <input required="required" type="number" class="form-control" name="id" id="exampleFormControlInput1" placeholder="ID de la catégorie">
+                <input required="required" type="number" class="form-control" name="categorie_id" id="exampleFormControlInput1" placeholder="ID de la catégorie">
             </div>
 
             <div class="form-group">
