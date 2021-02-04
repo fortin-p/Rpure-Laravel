@@ -18,7 +18,7 @@ Route::get('/cart',[CartController::class,'cart']);
 Route::get('/voyage',[VoyageController::class,'voyage']);
 Route::get('/voyage/{id}',[VoyageController::class,'specVoyage']);
 
-Route::get('/boutique', [BDDController::class,'boutique']);
-Route::get('/store', [BDDController::class,'store']);
 
+Route::get('/store', [BDDController::class,'show']);
 
+Route::get('/boutique', [BDDController::class,'productPrice']);

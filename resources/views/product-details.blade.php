@@ -3,7 +3,7 @@
     Rpure - liste produits
 @endsection
 @section('content')
-    Liste des produits
+Produit numéro : {{$id}}
 @endsection
 
 
