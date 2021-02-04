@@ -3,7 +3,7 @@
     Rpure - produit
 @endsection
 @section('content')
-    Produit numéro : {{$id}}
+
 @endsection
 
 
