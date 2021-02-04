@@ -10,4 +10,8 @@ class VoyageController extends Controller
     {
         return view ('voyage');
     }
+    public function specVoyage()
+    {
+        return view('specvoyage');
+    }
 }
