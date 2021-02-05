@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+//On déclare le model
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,8 @@ class BDDController extends Controller
 
     public function productPrice()
     {
-        $products = Product::orderBy('price')
+        //On appel notre model Product
+        $products = Product::orderBy('price', 'asc')
             ->get();
         return view('product', ['products' => $products]);
     }
@@ -27,7 +29,7 @@ class BDDController extends Controller
     public function boutique()
     {
 
-        $products = DB::select('SELECT * FROM products');
+        $products = product::get();
 
         return view('product', ['products' => $products]);
     }

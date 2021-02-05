@@ -1,5 +1,4 @@
 
-
         @extends('layout.layout');
         @section('title')
         <title>Page d'Accueil R-pure</title>

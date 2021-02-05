@@ -1,7 +1,10 @@
 @extends('layout.layout')
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+
 @foreach ($products as $product)
+
 
 <div class="container">
     <div class="productPicture">
