@@ -9,17 +9,19 @@ use Illuminate\Support\Facades\DB;
 class BDDController extends Controller
 {
 
-    public function productPrice(){
-        $products = Product ::orderBy('price')
-        ->get();
-        return view('product',['products'=>$products] );
+    public function productPrice()
+    {
+        $products = Product::orderBy('price')
+            ->get();
+        return view('product', ['products' => $products]);
     }
 
-    public function product(){
+    public function product()
+    {
 
-        $products = Product ::orderBy('name')
-        ->get();
-        return view('product',['products'=>$products] );
+        $products = Product::orderBy('name')
+            ->get();
+        return view('product', ['products' => $products]);
     }
 
     public function boutique()
@@ -27,12 +29,13 @@ class BDDController extends Controller
 
         $products = DB::select('SELECT * FROM products');
 
-        return view('product',['products'=>$products]);
+        return view('product', ['products' => $products]);
     }
 
     public function show($id)
     {
-        $products = DB::selectOne("SELECT * from products where id= ?" ,[$id]);
-        return view('product-details',['id' => $id , 'products'=>$products ]);
+        $products = Product::find($id);
+        //dd($products);
+        return view('product-details', ['products' => $products]);
     }
 }

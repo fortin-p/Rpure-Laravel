@@ -13,7 +13,6 @@
     <title>@yield('title')</title>
 </head>
 @include('navbar')
-<body>
 @yield('content')
 </body>
 </html>

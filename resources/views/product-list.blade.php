@@ -1,6 +1,6 @@
-@extends('hautdepage')
+@include('layout.layout')
 @section('title')
-    Rpure - produit
+    <h1>Rpure - produit</h1>
 @endsection
 @section('content')
 

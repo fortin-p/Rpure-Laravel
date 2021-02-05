@@ -57,7 +57,7 @@
             </a>
         </div>
     </div>
-    <h2 class="title-2"">A propos du guide: </h2>
+    <h2 class="title-2">A propos du guide: </h2>
     <div class="alpiniste">
         <div id="img-resize">
         </div>
@@ -65,7 +65,7 @@
             tiam lorem nisl, mollis eget est sed, venenatis vulputate lectus. Phasellus at faucibus arcu. Sed sodales tellus odio, eu pharetra elit accumsan sed.
         </p>
     </div>
-    <h2 class="title-2"">Avis le plus populaire : </h2>
+    <h2 class="title-2">Avis le plus populaire : </h2>
     <div class="alpiniste">
         <p>Etiam lorem nisl, mollis eget est sed, venenatis vulputate lectus. Phasellus at faucibus arcu. Sed sodales tellus odio, eu pharetra elit accumsan sed. Nunc luctus arcu ut finibus sodales. Donec quis dignissim urna, et faucibus dui. Pellentesque semper lorem lorem, non suscipit dui convallis tempor. Etiam eget dolor metus.
             tiam lorem nisl, mollis eget est sed, venenatis vulputate lectus. Phasellus at faucibus arcu. Sed sodales tellus odio, eu pharetra elit accumsan sed.

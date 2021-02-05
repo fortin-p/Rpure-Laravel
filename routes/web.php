@@ -8,17 +8,17 @@ use App\Http\Controllers\VoyageController;
 use App\Http\Controllers\BDDController;
 
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/product',[ProductController::class,'listProduct']);
-Route::get('/product/{id}',[ProductController::class,'product']);
+Route::get('/product', [ProductController::class, 'listProduct']);
+Route::get('/product/{id}', [ProductController::class, 'product']);
 
-Route::get('/cart',[CartController::class,'cart']);
+Route::get('/cart', [CartController::class, 'cart']);
 
-Route::get('/voyage',[VoyageController::class,'voyage']);
-Route::get('/voyage/{id}',[VoyageController::class,'specVoyage']);
+Route::get('/voyage', [VoyageController::class, 'voyage']);
+Route::get('/voyage/{id}', [VoyageController::class, 'specVoyage']);
 
 
-Route::get('/store', [BDDController::class,'show']);
+Route::get('/boutique', [BDDController::class, 'productPrice']);
 
-Route::get('/boutique', [BDDController::class,'productPrice']);
+Route::get('/product-details/{id}', [BDDController::class, 'show']);

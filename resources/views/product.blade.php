@@ -2,6 +2,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 @foreach ($products as $product)
+
 <div class="container">
     <div class="productPicture">
         {{ $product->picture }}
@@ -18,8 +19,10 @@
         {{ $product->description }}
     </p>
 
-    <form action="store/{{ $product->id }}" method="GET">
-    <button class="" type="submit" value="{{ $product->id }}">Details</button>
+    <a href="product-details/{{ $product->id }}">
+        <button>Details</button>
+    </a>
+
 </div>
 @endforeach
 
