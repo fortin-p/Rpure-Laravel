@@ -25,7 +25,8 @@ route::get('/voyagenameandprice',[ProductController::class,'getDataByNameAndPric
 
 route::get('/backoffice',[backofficecontroller::class,'index']);
 route::get('/backoffice/create',[backofficecontroller::class,'create']);
-route::post('/backoffice/create',[backofficecontroller::class,'store']);
+route::post('/backoffice_update',[backofficecontroller::class,'store']);
 
 route::get('/backoffice/{id}/edit',[backofficecontroller::class,'edit']);
-route::post('/backoffice/{id}/edit', [backofficecontroller::class,'update']);
+route::put('/backoffice/{id}/edit',[backofficecontroller::class,'update']);
+route::delete('/delete/{name}', [backofficecontroller::class,'delete']);

@@ -17,7 +17,7 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link active" aria-current="page" href="/backoffice">
                             <span data-feather="home"></span>
                             Dashboard
                         </a>
@@ -26,18 +26,6 @@
                         <a class="nav-link" href="/backoffice/create">
                             <span data-feather="file"></span>
                             Ajouter un prodruit
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart"></span>
-                            modifier
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="users"></span>
-                            Supprimer
                         </a>
                     </li>
 

@@ -12,5 +12,6 @@
 @include('layout.navbar_backoffice')
 <body>
 @yield('content')
+
 </body>
 </html>

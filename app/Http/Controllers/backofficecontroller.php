@@ -54,8 +54,17 @@ class backofficecontroller extends Controller
             ],
 
         ];
-
-        return view('backoffice',$data);
+    $product = new Product();
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->weight = $request->input('weight');
+        $product->image = $request->input('image');
+        $product->categorie_id = $request->input('categorie_id');
+        $product->quantity =$request->input('quantity');
+        $product->available = 1;
+        $product->save();
+        return view('backoffice_update',$data);
     }
 
     /**
@@ -78,7 +87,7 @@ class backofficecontroller extends Controller
     public function edit($id)
     {
         $products = Product::find($id);
-        return view('backoffice_update',['products' => $products]);
+        return view('EditBackoffice',['products' => $products]);
     }
 
     /**
@@ -91,7 +100,6 @@ class backofficecontroller extends Controller
     public function update(Request $request, $id)
     {
         $products = Product::find($id);
-
         $products->name = $request->input('name');
         $products->description = $request->input('description');
         $products->price = $request->input('price');
@@ -99,8 +107,8 @@ class backofficecontroller extends Controller
         $products->image = $request->input('image');
         $products->categorie_id = $request->input('categorie_id');
         $products->quantity =$request->input('quantity');
-
-        return view('backoffice_update',['products' => $products]);
+        $products->save();
+        return redirect('/backoffice');
     }
 
 
@@ -110,8 +118,10 @@ class backofficecontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($name)
     {
-        //
+        Product::where('name', $name)->delete();
+
+        return view('backoffice');
     }
 }

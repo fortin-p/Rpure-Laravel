@@ -1,11 +1,27 @@
+@extends('Layout.back')
 @section('content')
+@if(!isset($products))
+    le produit n'existe pas!
+@else
+    <div class="card container">
+        <div class=" descpCanada">
+            <img src="{{ ($products['image']) }}" alt="Voyage banner" class="photo">
+            <h1 class ='r-titre'>name: {{ $products['name'] }}</h1>
+            <h2 id="price">price: {{ $products['price'] }}</h2>
+            <h2 id="price"> weight :{{ $products['weight'] }}</h2>
+            <h2 id="price">quantity :{{ $products['quantity'] }}</h2>
+            <h2 id="price">id :{{ $products['categorie_id'] }}</h2>
+            <h2 class="description"> description :{{ $products['description'] }}</h2>
+        </div>
+    </div>
 
     <div class="container text-white">
-        <form action="/backoffice_update" method="POST" class="form-example">
+        <form action="/backoffice/{{ $products['id'] }}/edit" method="POST" class="form-example">
             {{ csrf_field() }}
+            {{ method_field('PUT') }}
             <div class="form-group">
                 <label for="create">Nom de l'article</label>
-                <input required="required" type="text" class="form-control" name="name" placeholder="Nom de l'article">
+                <input  type="text" class="form-control" name="name" placeholder="Nom de l'article">
             </div>
             <div class="form-group">
                 <label for="create">Description de l'article</label>
@@ -44,8 +60,8 @@
                 <label for="create">Quantité disponible</label>
                 <input required="required" type="number" class="form-control" name="quantity" placeholder="1">
             </div>
-            <button class="btn btn-primary" type="submit">Ajouter l'article</button>
+            <button class="btn btn-primary" type="submit">Modifier</button>
         </form>
     </div>
-
+@endif
 @endsection
