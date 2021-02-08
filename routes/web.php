@@ -5,8 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
-use App\Http\Controllers\BoutiqueController;
-use App\Http\Controllers\BackofficeController;
+use App\Http\Controllers\ProductByName;
+use App\Http\Controllers\backofficecontroller;
+use App\Http\Controllers\SessionController;
 
 
 
@@ -17,22 +18,20 @@ Route::get('/product/{id}',[ProductController::class,'product']);
 
 Route::get('/cart',[CartController::class,'cart']);
 
-Route::get('/voyage',[VoyageController::class,'voyage']);
-Route::get('/voyage/{id}',[VoyageController::class,'specVoyage']);
+Route::get('/voyage',[ProductController::class,'show']);
+Route::get('/voyage/{id}',[ProductController::class,'store']);
 
-Route::get('/boutique',[BoutiqueController::class,'boutique']);
-Route::get('/boutique/{id}',[BoutiqueController::class,'specarticle']);
+route::get('/voyagename',[ProductController::class,'getData']);
+route::get('/voyageprice',[ProductController::class,'getDataByPrice']);
+route::get('/voyagenameandprice',[ProductController::class,'getDataByNameAndPrice']);
 
-Route::get('/boutiqueprice',[BoutiqueController::class,'boutiqueprice']);
-Route::get('/boutiquename',[BoutiqueController::class,'boutiquename']);
+route::get('/backoffice',[backofficecontroller::class,'index']);
+route::get('/backoffice/create',[backofficecontroller::class,'create']);
+route::post('/backoffice_update',[backofficecontroller::class,'store']);
 
+route::get('/backoffice/{id}/edit',[backofficecontroller::class,'edit']);
+route::put('/backoffice/{id}/edit',[backofficecontroller::class,'update']);
+route::delete('/delete/{name}', [backofficecontroller::class,'delete']);
 
-Route::get('/backoffice',[BackofficeController::class,'index']);
-Route::post('/backoffice',[BackofficeController::class,'store']);
-
-Route::get('/backoffice/create',[BackofficeController::class,'create']);
-Route::get('/backoffice/{id}/edit',[BackofficeController::class,'edit']);
-Route::post('/backoffice/{id}/edit',[BackofficeController::class,'update']);
-
-Route::post('/backoffice/create', [BackofficeController::class, 'store']);
+route::get('/backoffice/customers',[backofficecontroller::class,'customers'], [SessionController::class,'customers']);
 
