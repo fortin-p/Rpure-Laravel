@@ -7,9 +7,7 @@
                     <header class="card-header">
                         <p class="r-titre card-header-title">{{$article->name}}</p>
                         <div class="select">
-
                             <p class="description">{{ $article->categorie->name }}</p>
-
                             </select>
                         </div>
 

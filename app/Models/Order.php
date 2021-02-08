@@ -12,7 +12,7 @@ class Order extends Model
     public function customer()
     {
 
-        return $this->hasMany(Customer::class);
+        return $this->belongsTo(Customer::class);
 
     }
 
