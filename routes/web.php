@@ -7,6 +7,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
 use App\Http\Controllers\ProductByName;
 use App\Http\Controllers\backofficecontroller;
+use App\Http\Controllers\CategoriesController;
+
 
 
 Route::get('/',[HomeController::class,'index']);
@@ -30,3 +32,7 @@ route::post('/backoffice_update',[backofficecontroller::class,'store']);
 route::get('/backoffice/{id}/edit',[backofficecontroller::class,'edit']);
 route::put('/backoffice/{id}/edit',[backofficecontroller::class,'update']);
 route::delete('/delete/{name}', [backofficecontroller::class,'delete']);
+
+
+route::get('/categorie/product/',[CategoriesController::class,'show'])->name('products.category');
+
