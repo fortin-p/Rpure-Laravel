@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
 use App\Http\Controllers\BDDController;
+use App\Http\Controllers\backOfficeController;
 
 //route vers la HomePage
 Route::get('/', [HomeController::class, 'index']);
@@ -27,3 +28,12 @@ Route::get('/boutique', [BDDController::class, 'productPrice']);
 //          /boutique est le nom qu'on lui donne, 'productPrice' = nom de la méthode.
 
 //Route::get('/backoffice', [BDDController::class, 'boutique']);
+
+//chemin vers la page backoffice
+Route::get('/backoffice', [backOfficeController::class, 'backoffice']);
+
+//Chemin vers la page backoffice/formulaire
+Route::post('/resultFormulaire', [backOfficeController::class, 'store']);
+Route::get('/backoffice/formulaire', [backOfficeController::class, 'create']);
+
+//Chemin vers
