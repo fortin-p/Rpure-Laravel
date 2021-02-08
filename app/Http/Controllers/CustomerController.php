@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\{Customer, order};
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     public function show()
     {
-        $clients = Customer::with('order')->get();
+        $clients = Order::with('Customer')->get();
         return view('Customer',['clients' => $clients]);
 
     }
