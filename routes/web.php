@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
+use App\Http\Controllers\ProductByName;
+use App\Http\Controllers\backofficecontroller;
 
 
 Route::get('/',[HomeController::class,'index']);
@@ -14,6 +16,17 @@ Route::get('/product/{id}',[ProductController::class,'product']);
 
 Route::get('/cart',[CartController::class,'cart']);
 
-Route::get('/voyage',[VoyageController::class,'voyage']);
-Route::get('/voyage/{id}',[VoyageController::class,'specVoyage']);
+Route::get('/voyage',[ProductController::class,'show']);
+Route::get('/voyage/{id}',[ProductController::class,'store']);
 
+route::get('/voyagename',[ProductController::class,'getData']);
+route::get('/voyageprice',[ProductController::class,'getDataByPrice']);
+route::get('/voyagenameandprice',[ProductController::class,'getDataByNameAndPrice']);
+
+route::get('/backoffice',[backofficecontroller::class,'index']);
+route::get('/backoffice/create',[backofficecontroller::class,'create']);
+route::post('/backoffice_update',[backofficecontroller::class,'store']);
+
+route::get('/backoffice/{id}/edit',[backofficecontroller::class,'edit']);
+route::put('/backoffice/{id}/edit',[backofficecontroller::class,'update']);
+route::delete('/delete/{name}', [backofficecontroller::class,'delete']);
