@@ -3,6 +3,7 @@
     <div class="card">
 
         @foreach ($products as $article)
+            {{dd($article)}}
                 <div class="card">
                     <header class="card-header">
                         <p class="r-titre card-header-title">{{$article->name}}</p>

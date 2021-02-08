@@ -12,7 +12,7 @@
                     <h1 class ='r-titre'>{{ $article->name }}</h1>
                     <h2 id="price">{{ $article->price }}</h2>
                     <p class="description">{{ $article->description }}</p>
-                    <p class="description">{{ $article->categorie['name'] }}</p>
+                    <p class="description">{{ $article->categorie->name }}</p>
                     <form action="voyage/{{$article->id}}" method="get">
                    <button class="detailsbutton" type="submit" value="{{$article->id}}">Details</button>
                     </form>
