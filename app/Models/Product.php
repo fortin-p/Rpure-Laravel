@@ -10,4 +10,8 @@ class Product extends Model
     use HasFactory;
     public $timestamps=false;
 
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
 }

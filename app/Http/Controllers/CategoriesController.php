@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Models\Categorie;
+
+
 
 class CategoriesController extends Controller
 {
-    public function index()
+    public function show()
     {
-
-        $categories = Categorie::all();
-        return view('voyage',['categories' => $categories]);
+        $products = Product::with('categorie')->get();
+        return view('Categorie',['products' => $products]);
 
     }
+
+
 }
