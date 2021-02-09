@@ -8,18 +8,13 @@
                 <div class="col-6">
                     <h2>{{$article->name}}</h2>
                     <h3>{{$article->price}}€</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
                     <p>Weight: {{$article->weight}}</p>
-                </div>
-                <div class="col-6">
                     <p>{{$article->description}}</p>
                 </div>
+            </div>
+
                 <button class="detailsbutton" type="submit" value="{{$article->id}}">Modifier l'article</button>
             </div>
-        </div>
     </form>
     <form action="/backoffice/delete/{{$article->id}}" method="POST">
         {{csrf_field()}}
