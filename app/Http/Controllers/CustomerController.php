@@ -9,8 +9,11 @@ class CustomerController extends Controller
 {
     public function show()
     {
+
         $clients = Customer::with('order')->get();
         return view('Customer',['clients' => $clients]);
 
+
     }
+
 }
