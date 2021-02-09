@@ -28,4 +28,8 @@ class BoutiqueController extends Controller
         $articles=Product::all('name', 'price');
         return view('boutique')->with('articles', $articles);
     }
+    public function basket()
+    {
+
+    }
 }
