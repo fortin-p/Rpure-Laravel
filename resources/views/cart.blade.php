@@ -28,6 +28,7 @@
         <div class="QuantityCart">
         <label for="quantity">Quantity :</label>
         <input  type="number" id="quantity" name="quantity" min="1" max="{{$article->quantity}}">
+            <span style="color: red">@error('quantity'){{$message}}@enderror</span>
         </div>
     </div>
 </div>
