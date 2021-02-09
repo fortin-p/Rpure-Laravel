@@ -22,7 +22,7 @@
                 <hr class="hr-hover">
             </li>
             <li id="nav-five">
-                <a class="" href="/cart">Panier</a>
+                <a class="" href="/panier">Panier</a>
                 <hr class="hr-hover">
             </li>
         </ul>

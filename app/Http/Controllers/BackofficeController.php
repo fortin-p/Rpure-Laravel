@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\Order;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
+
 
 
 class BackofficeController extends Controller
@@ -20,59 +25,42 @@ class BackofficeController extends Controller
     }
     public function create()
     {
-        return view('create_backoffice');
+        return view('backoffice', ['create'=>true]);
     }
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $article = new Product;
-        $article->name = $request->input('name');
-        $article->description = $request->input('description');
-        $article->price = $request->input('price');
-        $article->weight = $request->input('weight');
-        $article->available = $request->input('available');
-        $article->image = $request->input('image');
-        $article->category_id = $request->input('category_id');
-        $article->quantity = $request->input('quantity');
-        $article->save();
+        $validated = $request->validated();
+       //dd($validated);
+        if($validated)
+        {
+            $article = new Product;
+            $article->name = $validated['name'];
+            $article->description = $validated['description'];
+            $article->price = $validated['price'];
+            $article->weight = $validated['weight'];
+            $article->available = $validated['available'];
+            $article->image = $validated['image'];
+            $article->category_id = $validated['category_id'];
+            $article->quantity = $validated['quantity'];
+            $article->save();
+        }
         return view('backoffice_update', ['article'=>$article]);
     }
 
-    public function update(Request $request, $id)
+    public function update(StorePostRequest $request, $id)
     {
         $article = Product::find($id);
+        $validated = $request->validated();
 
-        foreach ($_POST as $key=>$value)
-        {
-            if($_POST['name'] != NULL)
-            {
-                $article->name = $request->input('name');
-            }
-            if($_POST['description'] != NULL)
-            {
-                $article->description = $request->input('description');
-            }
-            if($_POST['price'] != NULL)
-            {
-                $article->price = $request->input('price');
-            }
-            if($_POST['weight'] != NULL)
-            {
-                $article->weight = $request->input('weight');
-            }
-            if($_POST['available'] != NULL)
-            {
-                $article->available = $request->input('available');
-            }
-            if( $_POST['image'] != NULL)
-            {
-                $article->image = $request->input('image');
-            }
-            if($_POST['quantity'] != NULL)
-            {
-                $article->quantity = $request->input('quantity');
-            }
-        }
-        $article->category_id = $request->input('category_id');
+        $article->name = $validated['name'];
+        $article->description = $validated['description'];
+        $article->price = $validated['price'];
+        $article->weight = $validated['weight'];
+        $article->available = $validated['available'];
+        $article->image = $validated['image'];
+        $article->category_id = $validated['category_id'];
+        $article->quantity = $validated['quantity'];
+
         $article->save();
         $article=Product::find($id);
         return view('backoffice_update',['article'=>$article]);
@@ -92,5 +80,16 @@ class BackofficeController extends Controller
         Product::find($id)->delete();
 
         return redirect('backoffice');
+    }
+    public function customers()
+    {
+        $clients = Customer::with('order')->get();
+
+        return view('customers',['clients' => $clients]);
+    }
+    public function categorie()
+    {
+        $products = Product::with('categorie')->get();
+        return view('categorie',['products' => $products]);
     }
 }

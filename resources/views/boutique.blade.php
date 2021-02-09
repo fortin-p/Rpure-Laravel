@@ -1,8 +1,12 @@
-@include('layout.layout')
-@section('title')
-        <title>Page d'Accueil R-pure</title>
-        @endsection
+@extends('Layout.layout')
 
-    @section('content');
-    @include('layout.FAQ')
-    @endsection
+@section('title')
+    Boutique | R-pure
+@endsection
+@section('content')
+    <div id="grid-body">
+        @foreach ($articles as $article)
+            @include('Layout.article')
+        @endforeach
+    </div>
+@endsection

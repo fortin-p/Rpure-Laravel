@@ -1,27 +1,26 @@
-<div class="card" style="width: 18rem;">
-    <div class="" style="align-items: center">
-        <form action="boutique/{{$article->id}}" method="get">
-        <div class="col-6">
-            <img class="card-img-top" src="{{$article->image}}" style="height: 20rem" alt="{{$article->name}}">
+<div class="body-card">
+    <form action="/panier" method="post">
+        @csrf
+        <div class="" style="align-items: center">
+            <div class="col-6">
+                <img src="{{$article->image}}" style="height: 20rem" alt="{{$article->name}}">
+            </div>
+            <div class="card-txt">
+                <div class="col-6">
+                    <h2>{{$article->name}}</h2>
+                    <h3>{{$article->price}}€</h3>
+                    <p>Weight: {{$article->weight}}</p>
+                    <p>{{$article->description}}</p>
+                </div>
+            </div>
+            <label>Quantité souhaité</label>
+            <input type="number" name="article[{{$article->id}}]" value="1" min="1" placeholder="1">
+            <input type="hidden" name="article[name]" value="{{$article->name}}">
+            <input type="hidden" name="article[price]" value="{{$article->price}}">
+            <input type="hidden" name="article[weight]" value="{{$article->weight}}">
+            <input type="hidden" name="article[image]" value="{{$article->image}}">
+
+            <button  type="submit">Ajouter au panier</button>
         </div>
-        <div class="card-txt">
-            <div class="col-6">
-                <h2>{{$article->name}}</h2>
-                <h3>{{$article->price}}€</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <p>Weight: {{$article->weight}}</p>
-            </div>
-            <div class="col-6">
-                <p>{{$article->description}}</p>
-            </div>
-            <button class="detailsbutton" type="submit" value="{{$article->id}}">Details</button>
-            </form>
-        <form action="/boutique/panier"  method="POST">
-            <button class="detailsbutton" type="submit" value="articles[{{$article->id}}]">Details</button>
-        </form>
-    </div>
-    </div>
+    </form>
 </div>

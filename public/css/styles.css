@@ -530,3 +530,23 @@ text-align: left;
     width :"400";
     height : "341";
 }
+/******************************************************************************************************************************/
+/* Fin container_FAQ*/
+/******************************************************************************************************************************/
+
+#grid-body
+{
+    display: grid;
+    grid-template-columns: repeat(3, 35rem);
+    margin-left: 10rem;
+    color: white;
+}
+.body-card
+{
+    background-color: #4A6574;
+    margin:3rem;
+}
+.blue
+{
+    background-color: #3D5160;
+}

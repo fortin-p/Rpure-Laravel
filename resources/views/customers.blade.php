@@ -1,25 +1,20 @@
-@extends('Layout.back')
+@extends("Layout.layout_backoffice")
 @section('content')
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Adress</th>
-        <th scope="col">City</th>
-        <th scope="col">Postal Code</th>
-    </tr>
-    </thead>
-    <tbody>
-@foreach ($customers as $customer)
-    <tr>
-        <td>{{$customer->first_name}}</td>
-        <td>{{$customer->last_name}}</td>
-        <td>{{$customer->adress}}</td>
-        <td>{{$customer->city}}</td>
-        <td>{{$customer->posta}}l</td>
-    </tr>
-@endforeach
-    </tbody>
-</table>
+    <div id="grid-body">
+    @foreach($clients as $client)
+
+{{--        {{dd($client->order)}}--}}
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="r-titre card-title">{{$client->first_name}} {{$client->last_name}}</h5>
+                    <p class="card-text blue ">Adresse : {{$client->adress}}</p>
+                    <p class="card-text blue">Ville : {{$client->city}}</p>
+                    <p class="card-text blue">Code postal : {{$client->postal}}</p>
+                    <p class="card-text blue">Nombre de commandes : {{$client->order->count()}}</p>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    </div>
 @endsection
