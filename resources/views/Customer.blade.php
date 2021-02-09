@@ -31,7 +31,7 @@
                     <td>{{$client->last_name}}</td>
                     <td>{{$client->adresse}}</td>
 
-                    <td>@foreach($client->order as $order){{$order->number}}   @endforeach</td>
+                    <td>@foreach($client->order as $order){{$order->number}}@endforeach</td>
                     <td>{{$client->order->count()}}</td>
 
 

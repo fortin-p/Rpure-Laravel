@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -39,22 +40,12 @@ class backofficecontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $data =[
-            'products' =>[
-                'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price'),
-                'weight' => $request->input('weight'),
-                'image' => $request->input('image'),
-                'categorie_id' => $request->input('categorie_id'),
-                'quantity' => $request->input('quantity'),
+        $request->validated();
+        $product = new Product();
 
-            ],
 
-        ];
-    $product = new Product();
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
@@ -64,7 +55,7 @@ class backofficecontroller extends Controller
         $product->quantity =$request->input('quantity');
         $product->available = 1;
         $product->save();
-        return view('backoffice_update',$data);
+        return response()->redirectTo('backoffice');
     }
 
     /**
@@ -87,7 +78,12 @@ class backofficecontroller extends Controller
     public function edit($id)
     {
         $products = Product::find($id);
-        return view('EditBackoffice',['products' => $products]);
+        if ($products === null){
+            return response()->view('errors.404');
+        }else{
+            return view('EditBackoffice',['products' => $products]);
+        }
+
     }
 
     /**
