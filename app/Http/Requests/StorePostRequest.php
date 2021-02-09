@@ -28,9 +28,9 @@ class StorePostRequest extends FormRequest
 
                 'name'=>'required ',
                 'description'=>'required ',
-                'price'=>'required | numeric | digits_between:: min=1 , max=10000 ',
+                'price'=>'required | numeric |  min:1 ',
                 'weight'=>'required | numeric',
-                'image'=>'required',
+                'image'=>'required | url',
                 'categorie_id'=>'required | numeric',
                 'quantity'=>'required | numeric',
 

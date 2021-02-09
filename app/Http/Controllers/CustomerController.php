@@ -11,7 +11,7 @@ class CustomerController extends Controller
     {
 
         $clients = Customer::with('order')->get();
-        return view('Customer',['clients' => $clients]);
+        return view('Customer/',['clients' => $clients]);
 
 
     }

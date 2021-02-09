@@ -16,7 +16,7 @@
                     <form action="voyage/{{$article->id}}" method="get">
                    <button class="detailsbutton" type="submit" value="{{$article->id}}">Details</button>
                     </form>
-                    @yield("iconePanier")
+                    <a href="/cart/{{$article->id}}"> <img src="{{ asset('images/Panier.png') }}" value="'{{$article->id}}" alt="panier" class="panier"> </a>
                 </div>
             </div>
     @endforeach

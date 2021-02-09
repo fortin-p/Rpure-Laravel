@@ -45,7 +45,6 @@ class backofficecontroller extends Controller
         $request->validated();
         $product = new Product();
 
-
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');

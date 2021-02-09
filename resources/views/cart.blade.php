@@ -8,11 +8,16 @@
 
 @section('content')
 <h1 class ='voyage_voyage'>@yield("titre")</h1>
-
+@foreach ($products as $article)
+    <form action="/backoffice_update" method="POST" class="form-example">
+        {{ csrf_field() }}
 <div class="containerbasket">
-    <img src="{{ asset('images/canada.jpg') }}" alt="Voyage banner" class="photoBasket">
+
+    <img src="{{ $article->image }}" alt="Voyage banner" class="photoBasket">
     <div class="childBasket">
-        <h3>Un voyage unique au canada vous attend</h3>
+        <h3>{{ $article->description }}</h3>
+        <h3>{{$article->price}}€</h3>
+
         <p>Descriptions :</p>
         <ul style="list-style-type:circle">
             <h4>Pack medium :</h4>
@@ -20,21 +25,15 @@
             <li>1 spray nasales</li>
             <li>1 carte postale</li>
         </ul>
+        <div class="QuantityCart">
+        <label for="quantity">Quantity :</label>
+        <input  type="number" id="quantity" name="quantity" min="1" max="{{$article->quantity}}">
+        </div>
     </div>
 </div>
+<button class="detailsbutton" type="submit">Commander</button>
 
-<div class="containerbasket">
-    <img src="{{ asset('images/alpes.jpg') }}" alt="Voyage banner" class="photoBasket">
-    <div class="childBasket">
-        <h3>Un voyage rempli d’air des Alpes</h3>
-        <p>Descriptions :</p>
-        <ul style="list-style-type:circle">
-            <h4>Pack VIP :</h4>
-            <li>4 bouteilles d'AIR</li>
-            <li>2 spray nasaux</li>
-            <li>1 carte postale</li>
-            <li>1 poster</li>
-        </ul>
-    </div>
-</div>
+
+</form>
+@endforeach
 @endsection
