@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class BoutiqueController extends Controller
 {
-    public function boutique()
+    public function index()
     {
         $articles=Product::orderBy('name', 'asc')->get();
-        return view('boutique')->with('articles', $articles);
+        return view('boutique', ['articles'=>$articles]);
     }
     public function specarticle($id)
     {

@@ -14,6 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
 </head>
+<h1 id="title-page">BackOffice :</h1>
+<a href="/backoffice/create"><button>Créer un nouvel article</button></a>
+<br><br>
+<a href="/backoffice"><button>Retour à la liste des produits</button></a>
+<br><br>
+<a href="/backoffice/customers"><button>Tous les clients</button></a>
 <body>
 @yield('content')
 </body>
