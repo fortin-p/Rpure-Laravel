@@ -1,5 +1,5 @@
-<form action="/backoffice/{{$article->id}}/edit" method="get">
-    <div class="body-card">
+<div class="body-card">
+    <form action="/backoffice/{{$article->id}}/edit" method="get">
         <div class="" style="align-items: center">
             <div class="col-6">
                 <img src="{{$article->image}}" style="height: 20rem" alt="{{$article->name}}">
@@ -20,5 +20,10 @@
                 <button class="detailsbutton" type="submit" value="{{$article->id}}">Modifier l'article</button>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+    <form action="/backoffice/delete/{{$article->id}}" method="POST">
+        {{csrf_field()}}
+        @method('DELETE')
+        <button name="delete" class="btn btn-primary" type="submit">Supprimer l'article </button>
+    </form>
+</div>

@@ -3,13 +3,16 @@
 @section('content')
 <h1 id="title-page">BackOffice :</h1>
 <a href="/backoffice/create"><button>Créer un nouvel article</button></a>
+<br><br>
+<a href="/backoffice"><button>Retour à la liste des produits</button></a>
 <div id="grid-body">
-@include('Layout.article_backoffice')
+    @include('Layout.article_backoffice')
 </div>
 
 <div class="container text-white">
     <form action="/backoffice/{{$article->id}}/edit" method="POST" class="form-example">
-        {{ csrf_field() }}
+        {{csrf_field()}}
+        @method('put')
         <div class="form-group">
             <label for="create['name']">Nom de l'article</label>
             <input type="text" class="form-control" name="name" placeholder="Nom de l'article">

@@ -30,9 +30,12 @@ Route::get('/boutiquename',[BoutiqueController::class,'boutiquename']);
 Route::get('/backoffice',[BackofficeController::class,'index']);
 Route::post('/backoffice',[BackofficeController::class,'store']);
 
-Route::get('/backoffice/create',[BackofficeController::class,'create']);
 Route::get('/backoffice/{id}/edit',[BackofficeController::class,'edit']);
-Route::post('/backoffice/{id}/edit',[BackofficeController::class,'update']);
+Route::put('/backoffice/{id}/edit',[BackofficeController::class,'update']);
 
-Route::post('/backoffice/create', [BackofficeController::class, 'store']);
+Route::get('/backoffice/create',[BackofficeController::class,'create']);
+Route::post('/backoffice/create',[BackofficeController::class,'store']);
 
+Route::get('/backoffice/delete/', [BackofficeController::class, 'delete']);
+//Route::post('/backoffice/delete/', [BackofficeController::class, 'delete']);
+route::delete('/backoffice/delete/{id}', [backofficecontroller::class,'delete']);

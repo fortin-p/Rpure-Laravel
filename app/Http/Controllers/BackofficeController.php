@@ -20,55 +20,54 @@ class BackofficeController extends Controller
     }
     public function create()
     {
-        return view('backoffice', ['edition'=>true]);
+        return view('create_backoffice');
     }
     public function store(Request $request)
     {
-        $save = Product::create([
-                'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'price' => $request->input('price'),
-                'weight' => $request->input('weight'),
-                'available' => $request->input('available'),
-                'image' => $request->input('image'),
-                'gender' => $request->input('gender'),
-                'category_id' => $request->input('category_id'),
-                'quantity' => $request->input('quantity'),
-        ]);
-        $save->save();
-        return view('backoffice');
+        $article = new Product;
+        $article->name = $request->input('name');
+        $article->description = $request->input('description');
+        $article->price = $request->input('price');
+        $article->weight = $request->input('weight');
+        $article->available = $request->input('available');
+        $article->image = $request->input('image');
+        $article->category_id = $request->input('category_id');
+        $article->quantity = $request->input('quantity');
+        $article->save();
+        return view('backoffice_update', ['article'=>$article]);
     }
 
     public function update(Request $request, $id)
     {
         $article = Product::find($id);
+
         foreach ($_POST as $key=>$value)
         {
-            if(isset($_POST['name']))
+            if($_POST['name'] != NULL)
             {
                 $article->name = $request->input('name');
             }
-            if(isset($_POST['description']))
+            if($_POST['description'] != NULL)
             {
                 $article->description = $request->input('description');
             }
-            if(isset($_POST['price']))
+            if($_POST['price'] != NULL)
             {
                 $article->price = $request->input('price');
             }
-            if(isset($_POST['weight']))
+            if($_POST['weight'] != NULL)
             {
                 $article->weight = $request->input('weight');
             }
-            if(isset($_POST['available']))
+            if($_POST['available'] != NULL)
             {
                 $article->available = $request->input('available');
             }
-            if(isset($_POST['image']))
+            if( $_POST['image'] != NULL)
             {
                 $article->image = $request->input('image');
             }
-            if(isset($_POST['quantity']))
+            if($_POST['quantity'] != NULL)
             {
                 $article->quantity = $request->input('quantity');
             }
@@ -77,5 +76,21 @@ class BackofficeController extends Controller
         $article->save();
         $article=Product::find($id);
         return view('backoffice_update',['article'=>$article]);
+    }
+//    public function delete(Request $request)
+//    {
+//        if(isset($_POST['delete']))
+//        {
+//             $article = Product::find($request->input('delete'));
+//             $article->delete();
+//        }
+//        $articles=Product::orderBy('name', 'asc')->get();
+//        return view('backoffice', ['articles'=>$articles]);
+//    }
+    public function delete($id)
+    {
+        Product::find($id)->delete();
+
+        return redirect('backoffice');
     }
 }
