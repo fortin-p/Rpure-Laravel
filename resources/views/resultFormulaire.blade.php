@@ -5,9 +5,10 @@
 
 @section('content')
 
+
 <h3>Nom du produit</h3>
-{{ dd($article) }}
-<p>valeur : <b>{{$article['name'] }}</b></p>
+<p>valeur : <b>{{$article ['name'] }}</b></p>
+
 
 <h3>Description du Produit</h3>
 <p>valeur : <b>{{ $article['description'] }}</b></p>
@@ -31,12 +32,8 @@
 <p>valeur : <b>{{ $article['price'], '€' }}</b></p>
 
 
-<h5> Voulez-vous supprimer l'ajout ? </h5>
-<form method="post" action="/delete/{{$article->name}}">
-    @csrf
-    @method('DELETE')
-    <button type="submit">Spprimer</button>
-</form>
-
+<a href="/backoffice">
+    <button>Retour à la boutique</button>
+</a>
 
 @endsection

@@ -9,11 +9,12 @@ use App\Models\Product;
 class BackofficeController extends Controller
 {
 
-        // fonction pour aller sur /backoffice
-        public function backoffice()
-        {
-            return view('back');
-        }
+    // fonction pour aller sur /backoffice
+    public function backoffice()
+    {
+        $products = Product::all();
+        return view('back', ['products' => $products]);
+    }
 
 
     //Fonction pour Formulaire
@@ -25,23 +26,24 @@ class BackofficeController extends Controller
     //fonction pour afficher le résultat du Formulaire
     public function store(Request $request)
     {
-        if($request->input('catID')!=null && 0< $request->input('catID') && $request->input('catID') <=3 )
+
+        // if ($request->input('catID') != null && 0 < $request->input('catID') && $request->input('catID') <= 3)
         {
             $product =  new Product;
-            $product ->name = $request->input('name');
-            $product ->description = $request->input('description');
-            $product ->price = $request->input('price');
-            $product ->id = $request->input('id');
-            $product ->picture = $request->input('picture');
-            $product ->weight = $request->input('weight');
-            $product ->quantity = $request->input('quantity');
-            $product ->available = 1;
-            $product->category_id =$category_id=1;
-            $article = Product :: find($product->name);
+            $product->name = $request->input('name');
+            $product->description = $request->input('description');
+            $product->price = $request->input('price');
+            $product->id = $request->input('id');
+            $product->picture = $request->input('picture');
+            $product->weight = $request->input('weight');
+            $product->quantity = $request->input('quantity');
+            $product->available = 1;
+            $product->category_id = $category_id = 1;
             $product->save();
-            return view('resultFormulaire', ['article' => $article]);
+            $article = Product::find($product->id);
 
-        }else{
+            return view('resultFormulaire', ['article' => $article]);
+            //} else {
 
             return 'message error // Veuillez renseigner un ID entre 1 et 3';
         }
@@ -52,17 +54,21 @@ class BackofficeController extends Controller
     public function update(request $request, $id)
     {
         $product = Product::find($id);
-        $product ->name = $request->input('name');
-        $product ->description = $request->input('description');
-        $product ->price = $request->input('price');
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
         $product->save();
-        return view('back');
+        return view('resultFormulaire');
     }
 
-    public function delete($name)
+    public function updateFormulaire()
     {
-        $product = Product::where('name', $name) ->delete();
-        return view('back');
+        return view('formulaireUpdate');
     }
 
+    public function delete($id)
+    {
+        Product::where('id', $id)->delete();
+        return response()->redirectTo('/backoffice');
+    }
 }

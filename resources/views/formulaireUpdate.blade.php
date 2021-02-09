@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h2 class="panel-title">Formulaire d'ajout d'article</h2>
+        <h2 class="panel-title">Formulaire de modification</h2>
     </div>
     <div class="panel-body">
-
-        <form class="" action="/resultFormulaire" method="POST">
+        <form class="" action="/backoffice/update/{id}" method="POST">
             {{ csrf_field() }}
+
             <div class="form-group">
                 <label for="name">Nom du Produit</label>
                 <input type="text" class="form-control" name="name" placeholder="Product Name">
@@ -69,7 +69,7 @@
             <input required='required' type="number"  name="price" min="0"  placeholder="Prix en €">
 
 
-            <button type="submit">Ajout de l'article</button>
+            <button type="submit">Modifier l'article</button>
         </form>
 
 </div>

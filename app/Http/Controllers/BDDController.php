@@ -40,6 +40,4 @@ class BDDController extends Controller
         //dd($products);
         return view('product-details', ['products' => $products]);
     }
-
-
 }
