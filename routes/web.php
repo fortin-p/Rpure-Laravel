@@ -16,7 +16,7 @@ Route::get('/product',[ProductController::class,'listProduct']);
 Route::get('/product/{id}',[ProductController::class,'product']);
 
 Route::get('/cart/{id}',[CartController::class,'show']);
-route::post('cart',[CartController::class,'cart']);
+route::post('cart',[CartController::class,'store']);
 
 Route::get('/voyage',[ProductController::class,'show']);
 Route::get('/voyage/{id}',[ProductController::class,'store']);

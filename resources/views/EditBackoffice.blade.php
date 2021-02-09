@@ -16,24 +16,24 @@
     </div>
 
     <div class="container text-white">
-        <form action="/backoffice/{{ $products['id'] }}/edit" method="POST" class="form-example">
+        <form action="/backoffice/{{ $products['id'] }}/edit" method="POST" class="form-example" >
             {{ csrf_field() }}
             {{ method_field('PUT') }}
             <div class="form-group">
                 <label for="create">Nom de l'article</label>
-                <input  type="text" class="form-control" name="name" placeholder="Nom de l'article">
+                <input  type="text" class="form-control" name="name" placeholder="Nom de l'article" value="{{ $products['name'] }}">
             </div>
             <div class="form-group">
                 <label for="create">Description de l'article</label>
-                <textarea required="required" class="form-control" name="description" rows="4" placeholder="Description de l'article"></textarea>
+                <textarea required="required" class="form-control" name="description" rows="4" placeholder="Description de l'article" ></textarea>
             </div>
             <div class="form-group">
                 <label for="create">Prix de l'article</label>
-                <input required="required" type="number" class="form-control" name="price" placeholder="Prix de l'article">
+                <input required="required" type="number" class="form-control" name="price" placeholder="Prix de l'article" value="{{ $products['price'] }}">
             </div>
             <div class="form-group">
                 <label for="create">Poids de l'article</label>
-                <input required="required" type="number" class="form-control" name="weight" placeholder="Poids de l'article">
+                <input required="required" type="number" class="form-control" name="weight" placeholder="Poids de l'article" value="{{ $products['weight'] }}">
             </div>
             <div class="form-check">
                 <input required="required" class="form-check-input" type="radio" name="create" value=1 id="flexRadioDefault1">
@@ -49,16 +49,16 @@
             </div>
             <div class="form-group">
                 <label for="create">Image</label>
-                <input required="required" type="text" class="form-control" name="image" placeholder="Url de l'image">
+                <input required="required" type="text" class="form-control" name="image" placeholder="Url de l'image" value ="{{ $products['image'] }}">
             </div>
             <div class="form-group">
                 <label for="create">Numéro d'id de la catégorie</label>
-                <input required="required" type="number" class="form-control" name="categorie_id" id="exampleFormControlInput1" placeholder="ID de la catégorie">
+                <input required="required" type="number" class="form-control" name="categorie_id" id="exampleFormControlInput1" placeholder="ID de la catégorie" value=""{{ $products['categorie_id'] }}>
             </div>
 
             <div class="form-group">
                 <label for="create">Quantité disponible</label>
-                <input required="required" type="number" class="form-control" name="quantity" placeholder="1">
+                <input required="required" type="number" class="form-control" name="quantity" placeholder="1" value ="{{ $products['quantity'] }}">
             </div>
             <button class="btn btn-primary" type="submit">Modifier</button>
         </form>
