@@ -22,6 +22,7 @@
                     <th><h1>Last name</h1></th>
                     <th><h1>adresse</h1></th>
                     <th><h1>Commande numero :</h1></th>
+                    <th><h1>Total commande :</h1></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                     <td>{{$client->adresse}}</td>
 
                     <td>@foreach($client->order as $order){{$order->number}}   @endforeach</td>
+                    <td>{{$client->order->count()}}</td>
 
 
                 </tbody>
