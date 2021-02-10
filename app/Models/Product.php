@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
+
 class Product extends Model
 {
     use HasFactory;
 
-    public function categorie()
+    public function categories()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(categories::class);
     }
     public $timestamps = false;
 }

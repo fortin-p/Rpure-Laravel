@@ -26,6 +26,10 @@
         {{ $product->name }}
     </h2>
 
+
+
+
+
     <h1 class="productPrice">
         {{ $product->price }},€
     </h1>
