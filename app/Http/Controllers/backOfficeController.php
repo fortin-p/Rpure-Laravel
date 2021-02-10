@@ -37,16 +37,24 @@ class BackofficeController extends Controller
             $product->picture = $request->input('picture');
             $product->weight = $request->input('weight');
             $product->quantity = $request->input('quantity');
-            $product->available = 1;
+            $product->available = $request->input('available');
             $product->category_id = $category_id = 1;
             $product->save();
-            $article = Product::find($product->id);
+            //$article = Product::find($product->id);
 
-            return view('resultFormulaire', ['article' => $article]);
+            return view('resultFormulaire', ['article' => $product]);
             //} else {
 
             return 'message error // Veuillez renseigner un ID entre 1 et 3';
         }
+    }
+
+    public function edit($id)
+    {
+        $products = Product::find($id);
+
+        return view('resultFormulaire',['products' => $products]);
+
     }
 
 
@@ -55,15 +63,22 @@ class BackofficeController extends Controller
     {
         $product = Product::find($id);
         $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
-        $product->save();
-        return view('resultFormulaire');
+            $product->description = $request->input('description');
+            $product->price = $request->input('price');
+            $product->picture = $request->input('picture');
+            $product->weight = $request->input('weight');
+            $product->quantity = $request->input('quantity');
+            $product->available = 1;
+            //$product->category_id = $category_id = 1;
+            $product->save();
+
+        return view('resultFormulaire',['article' => $product,  'id' => $id]);
     }
 
-    public function updateFormulaire()
+    public function updateFormulaire(request $request, $id)
     {
-        return view('formulaireUpdate');
+        $product = Product::find($id);
+        return view('formulaireUpdate', ['product' => $product,  'id' => $id] );
     }
 
     public function delete($id)

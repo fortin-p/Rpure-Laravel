@@ -4,7 +4,8 @@
 @endsection
 @section('content')
 
-<p>Produit numéro : {{$products->id}}</p>
+<p>Produit numéro : {{$products->id}} </p>
+
 
 <p class="productDescription">
     {{ $products->description }}

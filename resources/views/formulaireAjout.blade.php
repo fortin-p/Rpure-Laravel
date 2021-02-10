@@ -52,13 +52,13 @@
             <div class="form-group">
                 <label for="available">Disponible de suite ?</label>
                 <div class="form-check">
-                    <input required="required" class="form-check-input" type="radio" name="store" value=1 id="flexRadioDefault1">
+                    <input required="required" class="form-check-input" type="radio" name="available" value=1 id="flexRadioDefault1">
                     <label class="form-check-label" for="store">
                         Oui
                     </label>
                 </div>
                 <div class="form-check">
-                    <input required="required" class="form-check-input" type="radio" name="store" value=0 id="flexRadioDefault2" checked>
+                    <input required="required" class="form-check-input" type="radio" name="available" value=0 id="flexRadioDefault2" checked>
                     <label class="form-check-label" for="store">
                         Non
                     </label>

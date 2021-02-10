@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class customers extends Model
 {
+
+    public $timestamps = false;
+
     use HasFactory;
 
-    /*public function orders()
+    public function orders()
     {
         return $this->hasMany(orders::class);
-    }*/
+    }
 }

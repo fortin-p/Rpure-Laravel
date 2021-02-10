@@ -9,8 +9,10 @@ class categories extends Model
 {
     use HasFactory;
 
-    /* public function product()
+    public $timestamps = false;
+
+     public function product()
     {
         return $this->hasMany(Product::class);
-    }*/
+    }
 }

@@ -10,8 +10,9 @@
         <h2 class="panel-title">Formulaire de modification</h2>
     </div>
     <div class="panel-body">
-        <form class="" action="/backoffice/update/{id}" method="POST">
-            {{ csrf_field() }}
+        <form class="" action="/backoffice/update/{{ $product->id }}" method="POST">
+            @csrf
+            @method('PUT')
 
             <div class="form-group">
                 <label for="name">Nom du Produit</label>

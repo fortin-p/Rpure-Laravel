@@ -6,8 +6,7 @@
 
 @foreach ($products as $product)
 @if ($product->available == 0)
-<p>Ce produit est indisponible Actuellement</p>
-
+<h3>Ce produit est indisponible Actuellement</h3>
 @endif
 
 <div class="container">
@@ -35,7 +34,7 @@
         {{ $product->description }}
     </p>
 
-    <a href="/backoffice/product-details/{id}{{ $product->id }}">
+    <a href="product-details/{{ $product->id }}">
         <button>Details</button>
     </a>
 

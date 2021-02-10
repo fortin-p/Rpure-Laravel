@@ -9,13 +9,12 @@ class orders extends Model
 {
     use HasFactory;
 
-    /*public function products()
-    {
-        return $this->hasMany(Products::class);
-    }
+    public $timestamps = false;
 
-    public function orders_products()
+    public function customer()
     {
-        return $this->hasOne(orders_products::class);
-    }*/
+
+        return $this->belongsTo(Customer::class);
+
+    }
 }

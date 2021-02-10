@@ -38,6 +38,6 @@ class BDDController extends Controller
     {
         $products = Product::find($id);
         //dd($products);
-        return view('product-details', ['products' => $products]);
+        return view('product-details', ['products' => $products, 'id' => $id] );
     }
 }

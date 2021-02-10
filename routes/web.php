@@ -21,7 +21,7 @@ Route::get('/voyage/{id}', [VoyageController::class, 'specVoyage']);
 
 
 //Affichage des page Details produit
-Route::get('/backoffice/product-details/{id}', [BDDController::class, 'show']);
+Route::get('/product-details/{id}', [BDDController::class, 'show']);
 
 //Affichage du Catalogue
 Route::get('/boutique', [BDDController::class, 'productPrice']);
