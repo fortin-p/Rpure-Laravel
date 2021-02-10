@@ -50,8 +50,8 @@ class BackofficeController extends Controller
     public function update(StorePostRequest $request, $id)
     {
         $article = Product::find($id);
-        $validated = $request->validated();
 
+        $validated = $request->validated();
         $article->name = $validated['name'];
         $article->description = $validated['description'];
         $article->price = $validated['price'];
@@ -62,7 +62,6 @@ class BackofficeController extends Controller
         $article->quantity = $validated['quantity'];
 
         $article->save();
-        $article=Product::find($id);
         return view('backoffice_update',['article'=>$article]);
     }
 //    public function delete(Request $request)

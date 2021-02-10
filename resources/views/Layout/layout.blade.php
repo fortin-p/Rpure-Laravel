@@ -11,7 +11,7 @@
     <link  rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     <title>@yield('title')</title>
 </head>
-@include('navbar')
+@include('Layout.navbar')
 <body>
 @yield('content')
 
