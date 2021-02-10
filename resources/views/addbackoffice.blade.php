@@ -6,22 +6,22 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="create">Nom de l'article</label>
-                <input  type="text" class="form-control" name="name" placeholder="Nom de l'article" required>
+                <input  type="text" class="form-control" name="name" placeholder="Nom de l'article" >
                 <span style="color: red">@error('name'){{$message}}@enderror</span>
             </div>
             <div class="form-group">
                 <label for="create">Description de l'article</label>
-                <textarea  class="form-control" name="description" rows="4" placeholder="Description de l'article" required></textarea>
+                <textarea  class="form-control" name="description" rows="4" placeholder="Description de l'article" ></textarea>
                 <span style="color: red">@error('description'){{$message}}@enderror</span>
             </div>
             <div class="form-group">
                 <label for="create">Prix de l'article</label>
-                <input  type="number" class="form-control" name="price" placeholder="Prix de l'article" required>
+                <input  type="number" class="form-control" name="price" placeholder="Prix de l'article" >
                 <span style="color: red">@error('price'){{$message}}@enderror</span>
             </div>
             <div class="form-group">
                 <label for="create">Poids de l'article</label>
-                <input  type="number" class="form-control" name="weight" placeholder="Poids de l'article" required>
+                <input  type="number" class="form-control" name="weight" placeholder="Poids de l'article" >
                 <span style="color: red">@error('weight'){{$message}}@enderror</span>
             </div>
             <div class="form-check">
@@ -38,18 +38,18 @@
             </div>
             <div class="form-group">
                 <label for="create">Image</label>
-                <input  type="text" class="form-control" name="image" placeholder="Url de l'image" required>
+                <input  type="text" class="form-control" name="image" placeholder="Url de l'image" >
                 <span style="color: red">@error('image'){{$message}}@enderror</span>
             </div>
             <div class="form-group">
                 <label for="create">Numéro d'id de la catégorie</label>
-                <input  type="number" class="form-control" name="categorie_id" id="exampleFormControlInput1" placeholder="ID de la catégorie" required>
+                <input  type="number" class="form-control" name="categorie_id" id="exampleFormControlInput1" placeholder="ID de la catégorie" >
                 <span style="color: red">@error('categorie_id'){{$message}}@enderror</span>
             </div>
 
             <div class="form-group">
                 <label for="create">Quantité disponible</label>
-                <input  type="number" class="form-control" name="quantity" placeholder="quantity" required>
+                <input  type="number" class="form-control" name="quantity" placeholder="quantity" >
                 <span style="color: red">@error('quantity'){{$message}}@enderror</span>
             </div>
             <button class="btn btn-primary" type="submit">Ajouter l'article</button>

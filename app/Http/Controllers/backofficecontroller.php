@@ -42,7 +42,7 @@ class backofficecontroller extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        $request->validated();
+//        $request->validated();
         $product = new Product();
 
         $product->name = $request->input('name');
@@ -78,7 +78,7 @@ class backofficecontroller extends Controller
     {
         $products = Product::find($id);
         if ($products === null){
-            return response()->view('errors.404');
+            return response()->view('errors.404',[],404);
         }else{
             return view('EditBackoffice',['products' => $products]);
         }
