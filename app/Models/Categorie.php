@@ -16,7 +16,6 @@ class Categorie extends Model
 
     }
 
-
-
+    protected $visible = ['name'];
 
 }

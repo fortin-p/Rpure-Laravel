@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -15,9 +16,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::all();
-    }
 
+        $products = Product::with('categorie')->get();
+        return response()->json(
+            $products
+        );
+    }
+    public function details($id)
+    {
+$products = Product::with('categorie')->where('id', $id)->get();
+        return response()->json(
+            $products
+        );
+
+
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -26,7 +39,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+       if (Product::create($request->all())){
+           return response()->json([
+                   'success' => 'Le produit a été créé'
+               ]
+           );
+       }
     }
 
     /**
@@ -47,9 +65,18 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request,$id)
     {
-        $product->update($request->all());
+        $products = Product::find($id);
+        if ($products->update($request->all())){
+            return response()->json([
+                    'success' => 'Le produit a été modifier'
+                ]
+            );
+        }
+
+
+
     }
 
     /**
@@ -58,8 +85,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function delete(Product $product,$id)
     {
-       $product->delete();
+        $product = Product::find($id);
+        if ($product->delete()) {
+            return response()->json([
+                    'success' => 'Le produit a été supprimer'
+                ]
+            );
+        }
     }
 }

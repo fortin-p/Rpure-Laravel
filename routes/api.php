@@ -19,4 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('products',ProductController::class);
+
+Route::get('products',[ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductController::class, 'details']);
+
+Route::post('/products/create', [ProductController::class, 'store']);
+
+Route::put('/products/edit/{id}', [ProductController::class, 'update']);
+Route::delete('/products/delete/{id}', [ProductController::class, 'delete']);
+
