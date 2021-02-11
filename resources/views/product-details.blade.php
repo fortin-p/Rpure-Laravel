@@ -11,6 +11,7 @@
     {{ $products->description }}
 </p>
 
+
 <div class="container">
 
     <div class="productPicture">

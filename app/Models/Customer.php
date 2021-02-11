@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class customers extends Model
+class Customer extends Model
 {
 
     public $timestamps = false;
 
     use HasFactory;
 
-    public function orders()
+    public function order()
     {
-        return $this->hasMany(orders::class);
+        return $this->hasMany(Order::class);
     }
 }

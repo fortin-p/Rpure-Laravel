@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 
+
 class Product extends Model
 {
     use HasFactory;
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsTo(categories::class);
+        return $this->belongsTo(Category::class);
     }
     public $timestamps = false;
 }

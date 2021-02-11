@@ -5,7 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\VoyageController;
 use App\Http\Controllers\BDDController;
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\backOfficeController;
+use App\Http\Controllers\CustomerController;
 
 //route vers la HomePage
 Route::get('/', [HomeController::class, 'index']);
@@ -41,3 +43,10 @@ Route::get('/backoffice/formulaire', [backOfficeController::class, 'create']);
 Route::get('backoffice/update/{id}', [backOfficeController::class, 'updateFormulaire']);
 Route::put('backoffice/update/{id}', [backOfficeController::class, 'update']);
 Route::delete('backoffice/delete/{id}', [backOfficeController::class, 'delete']);
+
+//Chemin pour afficher la Categorie
+route::get('/categorie', [CategorieController::class, 'productCategorie'])->name('product.categorie');
+
+//Chemin Pour afficher les lcients
+
+route::get('/customer', [CustomerController::class, 'customerOrder']);

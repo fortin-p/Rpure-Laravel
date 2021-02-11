@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class orders extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,7 @@ class orders extends Model
     public function customer()
     {
 
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class); // select * from customer where orders_id =
 
     }
 }

@@ -9,45 +9,49 @@
 <h3>Ce produit est indisponible Actuellement</h3>
 @endif
 
-<div class="container">
-    <form method="post" action="/backoffice/delete/{{$product->id}}">
-        {{ csrf_field() }}
-        @method('DELETE')
-        <button type="submit">supprimer</button>
-    </form>
+<div class="card-deck">
+    <div class="card">
+        <h2 class="productName">
+            {{ $product->name }}
 
-    <a href="/backoffice/update/{{$product->id}}"> <button type="submit">modifier</button></a>
+        </h2>
+        <p class="productDescription">
+            {{ $product->description }}
+        </p>
+        <div class="productPicture">
+            {{ $product->picture }}
+        </div>
+
+        </div>
+
+        <h1 class="productPrice">
+            {{ $product->price }},€
+        </h1>
 
 
-    <div class="productPicture">
-        {{ $product->picture }}
-    </div>
-    <h2 class="productName">
-        {{ $product->name }}
-    </h2>
+        <p class="productCategorie">
+
+        </p>
 
 
+        <a href="product-details/{{ $product->id }}">
+            <button>Details</button>
+        </a>
+        <form method="post" action="/backoffice/delete/{{$product->id}}">
+            {{ csrf_field() }}
+            @method('DELETE')
+            <button type="submit">supprimer</button>
+        </form>
 
-
-
-    <h1 class="productPrice">
-        {{ $product->price }},€
-    </h1>
-
-    <p class="productDescription">
-        {{ $product->description }}
-    </p>
-
-    <a href="product-details/{{ $product->id }}">
-        <button>Details</button>
-    </a>
+        <a href="/backoffice/update/{{$product->id}}"> <button type="submit">modifier</button></a>
 
 </div>
+
 @endforeach
 
             <div class="card-deck">
                 <div class="card">
-                    <div class="card-header">Ajout Article</div>
+                    <div class="card-header"><h3>Ajout Article</h3></div>
                     <div class="card-body">
                         <h3 class="card-title">Remplisser votre boutique</h5>
                         <p class="card-text">Ajouter des produit à votre produit grâce à notre Formulaire.</p>

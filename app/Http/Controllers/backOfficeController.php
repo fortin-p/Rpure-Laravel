@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Requests\StorePostRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\categories;
+use App\Models\Categorie;
 
-class BackofficeController extends Controller
+class backOfficeController extends Controller
 {
 
     // fonction pour aller sur /backoffice
@@ -26,7 +26,7 @@ class BackofficeController extends Controller
     }
 
     //fonction pour afficher le résultat du Formulaire
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
 
         // if ($request->input('catID') != null && 0 < $request->input('catID') && $request->input('catID') <= 3)
@@ -47,7 +47,8 @@ class BackofficeController extends Controller
             return view('resultFormulaire', ['article' => $product]);
             //} else {
 
-            return 'message error // Veuillez renseigner un ID entre 1 et 3';
+            //return 'message error // Veuillez renseigner un ID entre 1 et 3';
+            $validated = $request->validated();
         }
     }
 
@@ -55,8 +56,7 @@ class BackofficeController extends Controller
     {
         $products = Product::find($id);
 
-        return view('resultFormulaire',['products' => $products]);
-
+        return view('resultFormulaire', ['products' => $products]);
     }
 
 
@@ -65,22 +65,22 @@ class BackofficeController extends Controller
     {
         $product = Product::find($id);
         $product->name = $request->input('name');
-            $product->description = $request->input('description');
-            $product->price = $request->input('price');
-            $product->picture = $request->input('picture');
-            $product->weight = $request->input('weight');
-            $product->quantity = $request->input('quantity');
-            $product->available = 1;
-            //$product->category_id = $category_id = 1;
-            $product->save();
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->picture = $request->input('picture');
+        $product->weight = $request->input('weight');
+        $product->quantity = $request->input('quantity');
+        $product->available = 1;
+        //$product->category_id = $category_id = 1;
+        $product->save();
 
-        return view('resultFormulaire',['article' => $product,  'id' => $id]);
+        return view('resultFormulaire', ['article' => $product,  'id' => $id]);
     }
 
     public function updateFormulaire(request $request, $id)
     {
         $product = Product::find($id);
-        return view('formulaireUpdate', ['product' => $product,  'id' => $id] );
+        return view('formulaireUpdate', ['product' => $product,  'id' => $id]);
     }
 
     public function delete($id)
