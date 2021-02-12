@@ -14,7 +14,7 @@
             </h4>
     </div>
 
-        @foreach($customer->order as $order)
+        @foreach($customer->orders as $order)
         <h4 class="commande_number"> {{$order->number}}</h4>
         <h4 class="commande_number"> {{$order->date}}</h4>
 

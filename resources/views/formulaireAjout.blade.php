@@ -17,7 +17,7 @@
                 <label for="name">Nom du Produit</label>
                 <input type="text" class="form-control" name="name" placeholder="Product Name">
                 @error('name')
-                    {{$message}}
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -26,25 +26,47 @@
                 <label for="description">Description</label>
                 <input type="text" class="form-control" name="description" placeholder="Description">
                 @error('description')
-                {{$message}}
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             </div>
 
 
-            <div class="form-group">
+                <div class="form-group">
+                    <label for="catID">category_id</label>
+
+                            <select class="form-control" id="category_id" name="category_id">
+
+                                <option value=""> Veuillez choisir l'ID </option>
+
+                                @foreach($categories as $categorie)
+
+                                    <option value="{{ $categorie->id }}"> {{ $categorie->name }}</option>
+
+                                @endforeach
+
+                            </select>
+
+                            @error('category_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+
+                </div>
+
+
+            {{-- <div class="form-group">
                 <label for="catID">ID</label>
                 <input type="number" class="form-control" min="1" max="3" name="catID" placeholder="ID entre 1 et 3">
                 @error('catID')
-                {{$message}}
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-            </div>
+            </div> --}}
 
 
             <div class="form-group">
                 <label for="picture">Image</label>
                 <input type="file"  class="form-control" name="picture" placeholder="image">
                 @error('picture')
-                {{$message}}
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             </div>
 
@@ -53,7 +75,7 @@
                 <label for="weight">Poids</label>
                 <input  type="number" class="form-control" name="weight" placeholder="poids">
                 @error('weight')
-                {{$message}}
+                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             </div>
 
@@ -81,9 +103,9 @@
 
 
             <label for="Price"> Prix de vente de l'article :</label>
-            <input type="number"  name="price" min="0"  placeholder="Prix en €">
+            <input type="number"  name="price"   placeholder="Prix en €">
             @error('price')
-            {{$message}}
+            <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
 

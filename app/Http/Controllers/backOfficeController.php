@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Categorie;
+use App\Models\Category;
+
+use function GuzzleHttp\Promise\all;
 
 class backOfficeController extends Controller
 {
@@ -22,7 +25,9 @@ class backOfficeController extends Controller
     //Fonction pour Formulaire
     public function create()
     {
-        return view('formulaireAjout');
+        $categories = Category::all();
+
+        return view('formulaireAjout', ['categories' => $categories]);
     }
 
     //fonction pour afficher le résultat du Formulaire
@@ -40,9 +45,10 @@ class backOfficeController extends Controller
             $product->weight = $request->input('weight');
             $product->quantity = $request->input('quantity');
             $product->available = $request->input('available');
-            $product->category_id = $category_id = 1;
+            $product->category_id =$request->input('category_id');
+
             $product->save();
-            //$article = Product::find($product->id);
+
 
             return view('resultFormulaire', ['article' => $product]);
             //} else {

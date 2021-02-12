@@ -12,7 +12,7 @@ class CustomerController extends Controller
 {
     public function customerOrder()
     {
-        $customer = Customer::with('order')->get();
+        $customer = Customer::with('orders')->get();
         return view('customers', ['customers' => $customer]);
     }
 }
