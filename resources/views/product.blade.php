@@ -9,6 +9,8 @@
 <div class="container">
     <div class="productPicture">
         {{ $product->picture }}
+        <img src="https://source.unsplash.com/random/500x500
+        "/>
     </div>
     <h2 class="productName">
         {{ $product->name }}

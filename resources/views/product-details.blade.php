@@ -16,6 +16,8 @@
 
     <div class="productPicture">
         {{ $products->picture }}
+        <img src="https://source.unsplash.com/random/500x500
+        "/>
     </div>
 
     <h2 class="productName">
