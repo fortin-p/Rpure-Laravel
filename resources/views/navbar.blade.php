@@ -1,3 +1,8 @@
+<head>
+
+    {{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
+</head>
+
 <nav id="navbar">
     <div id="logo" href="/">
         <img src="{{asset('images/logo.png')}}">
@@ -5,7 +10,7 @@
     <div id="nav-title">
         <ul id="nav-items">
             <li id="nav-one">
-                <a class="" href="/">Accueil</a>
+                <a class="" href="/home">Accueil</a>
                 <hr class="hr-hover">
 
             </li>
@@ -22,7 +27,7 @@
                 <hr class="hr-hover">
             </li>
             <li id="nav-five">
-                <a class="" href="/cart">Panier</a>
+                <a class="" href="/cart/{id}">Panier</a>
                 <hr class="hr-hover">
             </li>
         </ul>
@@ -38,9 +43,43 @@
             </a>
         </div>
     </div>
+
+
+
+
+
+    <x-slot name="content">
+        <!-- Authentication -->
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-dropdown-link :href="route('logout')"
+                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                {{ __('Logout') }}
+            </x-dropdown-link>
+        </form>
+    </x-slot>
+
+
     <div id="user">
-        <a id="profile" href="/profile">
-            <img src="{{asset('images/avatar.png')}}">
-        </a>
+        @if(isset(Auth::user()->name))
+            <form method="POST" action="{{ route('logout') }}">
+
+                <div style="color : white; margin-top: 30px; font-size: 20px">{{ Auth::user()->name }}</div>
+                @csrf
+                <x-responsive-nav-link :href="route('logout')"
+                                       onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                    {{ __('Logout') }}
+                </x-responsive-nav-link>
+            </form>
+
+
+        @else
+            <a id="profile" href="/login">
+                <img src="{{asset('images/avatar.png')}}">
+            </a>
+        @endif
     </div>
 </nav>
