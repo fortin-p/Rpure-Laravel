@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 //use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\StorePostRequest;
+
 
 class ProductController extends Controller
 {
@@ -17,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Product::find($id);
+        $products = Product::all();
         return response()->json(
             $products
         );
@@ -35,18 +37,21 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         if (Product::create($request->all())){
-            return response()->json([
+            return response()->json(
+                [
                     'success' => 'Le produit a été créé'
-                ]
+                ],
+                201
             );
         }
         return response()->json([
                 'Erreur' => 'Le produit n\'a pas pu être créée'
             ]
-        );    }
+        );
+    }
 
     /**
      * Display the specified resource.
@@ -68,8 +73,8 @@ class ProductController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $products = Product::find($id);
-        if ($products->update($request->all())){
+        $product = Product::find($id);
+        if ($product->update($request->all())){
             return response()->json([
                     'success' => 'Le produit a été modifier'
                 ]
@@ -87,7 +92,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete(Product $product,$id)
+    public function delete($id)
     {
         $product = Product::find($id);
         if ($product->delete()) {
