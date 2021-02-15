@@ -13,6 +13,10 @@ use App\Http\Requests\StorePostRequest;
 
 class BackofficeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $articles=Product::orderBy('name', 'asc')->get();

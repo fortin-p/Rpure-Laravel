@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePostRequest;
-use App\Models\Product;
+//use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -16,32 +16,37 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $articles=Product::orderBy('name', 'asc')->get();
-        return view('boutique', ['articles'=>$articles]);
-    }
 
+        $products = Product::find($id);
+        return response()->json(
+            $products
+        );
+    }
+    public function details($id)
+    {
+        $products = Product::find($id);
+        return response()->json(
+            $products
+        );
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
-
-        $validated = $request->validated();
-        $article = new Product;
-        $article->name = $validated['name'];
-        $article->description = $validated['description'];
-        $article->price = $validated['price'];
-        $article->weight = $validated['weight'];
-        $article->available = $validated['available'];
-        $article->image = $validated['image'];
-        $article->category_id = $validated['category_id'];
-        $article->quantity = $validated['quantity'];
-        $article->save();
-        return view('backoffice_update', ['article'=>$article]);
-    }
+        if (Product::create($request->all())){
+            return response()->json([
+                    'success' => 'Le produit a été créé'
+                ]
+            );
+        }
+        return response()->json([
+                'Erreur' => 'Le produit n\'a pas pu être créée'
+            ]
+        );    }
 
     /**
      * Display the specified resource.
@@ -49,9 +54,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**
@@ -61,23 +66,19 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StorePostRequest $request, $id)
+    public function update(Request $request,$id)
     {
-        $article = Product::find($id);
-        $validated = $request->validated();
-
-        $article->name = $validated['name'];
-        $article->description = $validated['description'];
-        $article->price = $validated['price'];
-        $article->weight = $validated['weight'];
-        $article->available = $validated['available'];
-        $article->image = $validated['image'];
-        $article->category_id = $validated['category_id'];
-        $article->quantity = $validated['quantity'];
-
-        $article->save();
-        $article=Product::find($id);
-        return view('backoffice_update',['article'=>$article]);
+        $products = Product::find($id);
+        if ($products->update($request->all())){
+            return response()->json([
+                    'success' => 'Le produit a été modifier'
+                ]
+            );
+        }
+        return response()->json([
+                'Erreur' => 'Le produit n\'a pas été modifier'
+            ]
+        );
     }
 
     /**
@@ -86,8 +87,18 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Product $product,$id)
     {
-        //
+        $product = Product::find($id);
+        if ($product->delete()) {
+            return response()->json([
+                    'Success' => 'Le produit a été supprimer'
+                ]
+            );
+        }
+        return response()->json([
+                'Erreur' => 'Une erreur est survenue'
+            ]
+        );
     }
 }

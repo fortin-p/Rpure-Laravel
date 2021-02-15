@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\Api\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,16 @@ use App\Http\Controllers\API\ProductController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+
+Route::middleware('auth:api')->get('/products', function (Request $request) {
     return $request->user();
 });
-//Route::apiResource('/boutique',[\App\Http\Controllers\Api\ProductController::class]);
-Route::apiResource('/products',ProductController::class);
+
+Route::get('/products',[ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductController::class, 'details']);
+
+Route::post('/products/create', [ProductController::class, 'store']);
+
+Route::put('/products/edit/{id}', [ProductController::class, 'update']);
+Route::delete('/products/delete/{id}', [ProductController::class, 'delete']);
+
